@@ -1,4 +1,0 @@
-cd .. && make re
-cd test/
-gcc testmain.c ../libftprintf.a  
-./a.out 
