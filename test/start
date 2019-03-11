@@ -1,4 +1,4 @@
 cd .. && make re
 cd test/
-gcc testmain.c ../libftprintf.a  
+gcc main.c ../libftprintf.a  
 ./a.out 

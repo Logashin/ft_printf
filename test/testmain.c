@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/04 15:24:09 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/05 17:18:38 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/11 13:43:09 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@ int main(void)
 {
 //	ft_putnbr(ft_printf("a"));
 	 write(1, "Hello world", 5);
-//	 ft_printf("Nsha\n");
 	return (0);
 }
