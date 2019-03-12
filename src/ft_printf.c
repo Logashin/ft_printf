@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:03:43 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/11 13:57:24 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/12 21:44:45 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ t_print	*ft_struct_creat(t_print *po)
 	po->width = 0;
 	po->accuracy = 0;
 	po->i = 0;
-	po->check = 5;
 	return (po);
 }
 
@@ -48,10 +47,12 @@ void		ft_parse_format(char *format, t_print *po, va_list ap)
 		if (format[po->i] == '%' && format[po->i + 1] != '\0')
 		{
 			po->i++;
-			ft_param(format, po, ap);
-			po->check = 5;
+			if (ft_check_valid_param(format, po->i) == 1)
+				ft_param(format, po, ap);
+			else
+				ft_putchar('%');
 		}
-		else if (format[po->i] != '%' && format[po->i] != '\0')
+		else if (format[po->i] != '\0')
 		{
 			ft_putchar(format[po->i]);
 			po->returnsize++;
@@ -62,20 +63,12 @@ void		ft_parse_format(char *format, t_print *po, va_list ap)
 
 void		ft_param(char *format, t_print *po, va_list ap)
 {
-	int check;
-
-	check = 0;
 	while (ft_type(format, po, ap) == 0 && format[po->i] != '\0')
 	{
 		ft_flags(format, po);
 		ft_width_param(format, po);
 		ft_accuracy(format, po);
 		ft_mod_length(format, po);
-		if (po->check == 0)
-		{
-			po->i++;
-			return ;
-		}
 	}
 }
 
@@ -95,39 +88,18 @@ int		ft_printf(const char *format, ...)
 	return ((int)po->returnsize);
 }
 
-//        printf("\n_______________________\n");
-//        printf("plus%d #%d minus%d space%d zero%d width%d accuracy%d",po->plus,po->sharp, po->minus, po->space, po->zero, po->width, po->accuracy);
-//        printf("\n_______________________\n");
-//char *str;
-//char *str1;
-//int numb;
-//va_list ap;
-//va_start(ap, format);
-//str = va_arg(ap, char*);
-//str1 = va_arg(ap, char*);
-//numb = va_arg(ap, int);
-//ft_putstr(format);
-//ft_putstr(str);
-//ft_putstr(str1);
-//ft_putnbr(numb);
-//va_end(ap);
+int		ft_check_valid_param(char *str, int i)
+{
+	int try;
 
-// i = 0;
-// while (format[i])
-// {
-// if (format[i] != '%' && format[i] != 's')
-// {
-// ft_putchar(format[i]);
-// po.returnsize++;
-// }
-// if (format[i] == '%' && format[i + 1] != '\0')
-// {
-// if (format[i + 1] == 's')
-// {
-// str = va_arg(ap, char*);
-// ft_putstr(str);
-// po.returnsize += ft_strlen(str);
-// }
-// }
-// i++;
-// }
+	try = 0;
+	while (str[i] == '#' || str[i] == '-' || str[i] == '+' || str[i] == ' '
+		|| str[i] == '0' || str[i] == 'l' || str[i] == 'h' || str[i] == '%' ||
+		str[i] == '.' || ft_isdigit(str[i]) || str[i] == 'L' || str[i] == '*')
+		i++;
+	if (str[i] == 's' || str[i] == 's' || str[i] == 'd' || str[i] == 'i'
+		|| str[i] == 's' || str[i] == 's' || str[i] == 's' ||
+			str[i] == 'c' || str[i] == 's')
+		try++;
+	return (try);
+}

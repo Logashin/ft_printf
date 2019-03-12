@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:02:19 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/11 14:00:54 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/12 21:35:38 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int			ft_type(char *format, t_print *po, va_list ap)
 	if (format[po->i] == 'd' || format[po->i] == 'i')
 		stop = ft_print_int(po, ap);
 	po->i += stop;
-//  if(stop == 0)
-//	po->check--;
 	return (stop);
 }
 
@@ -97,35 +95,26 @@ void		ft_mod_length(char *format, t_print *po)
 {
 	if (format[po->i] == 'h' && format[po->i + 1] == 'h')
 	{
-		if (!(po->length = (char*)malloc(sizeof(char) * 3)))
-			return ;
-		ft_bzero(po->length, 3);
-		po->length = "hh";
+		po->length = 'A';
 		po->i += 2;
 		po->check--;
 		return ;
 	}
 	if (format[po->i] == 'l' && format[po->i + 1] == 'l')
 	{
-		if (!(po->length = (char*)malloc(sizeof(char) * 3)))
-			return ;
-		ft_bzero(po->length, 3);
-		po->length = "ll";
+		po->length = 'B';
 		po->i += 2;
 		po->check--;
 		return ;
 	}
 	while (format[po->i] == 'h' || format[po->i] == 'l' || format[po->i] == 'L')
 	{
-		if (!(po->length = (char*)malloc(sizeof(char) * 2)))
-			return ;
-		ft_bzero(po->length, 2);
 		if (format[po->i] == 'h')
-			po->length[0] = 'h';
+			po->length = 'h';
 		if (format[po->i] == 'l')
-			po->length[0] = 'l';
+			po->length = 'l';
 		if (format[po->i] == 'L')
-			po->length[0] = 'L';
+			po->length = 'L';
 		po->i++;
 		po->check--;
 	}
