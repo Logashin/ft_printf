@@ -9,9 +9,12 @@ DIRS = src
 HEADER = header
 
 SRC = ft_printf.c \
-	  ft_parse_format.c \
-	  ft_print_type.c \
-	  ft_print_int.c \
+	ft_struct.c \
+	ft_parse_format.c \
+	ft_print_str_char_p.c \
+	ft_print_int.c \
+	ft_help_norm_for_d.c \
+	ft_mod_lenght.c \
 
 OBJ = *.o
 

@@ -6,11 +6,11 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:02:19 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/12 21:35:38 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/13 19:52:03 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../header/ft_printf.h"
 
 int			ft_type(char *format, t_print *po, va_list ap)
 {
@@ -18,13 +18,15 @@ int			ft_type(char *format, t_print *po, va_list ap)
 
 	stop = 0;
 	if (format[po->i] == '%')
-		stop = ft_print_procent(format, po);
+		stop = ft_print_procent(po);
 	if (format[po->i] == 'c' || format[po->i] == 'C')
 		stop = ft_print_char(po, ap);
 	if (format[po->i] == 's')
 		stop = ft_print_string(po, ap);
 	if (format[po->i] == 'd' || format[po->i] == 'i')
 		stop = ft_print_int(po, ap);
+	// if (format[po->i] == 'u')
+	// 	stop = 
 	po->i += stop;
 	return (stop);
 }
@@ -47,7 +49,6 @@ void		ft_flags(char *format, t_print *po)
 		if (po->minus == 1 && po->zero == 1)
 			po->zero = 0;
 		po->i++;
-		po->check--;
 	}
 }
 
@@ -68,7 +69,6 @@ void		ft_width_param(char *format, t_print *po)
 				po->i++;
 			}
 		}
-		po->check--;
 	}
 }
 
@@ -86,8 +86,11 @@ void		ft_accuracy(char *format, t_print *po)
 		{
 			po->accuracy = po->accuracy * 10 + format[po->i] - '0';
 			po->i++;
+			if (po->accuracy == 0)
+				po->accuracy = -1;
 		}
-		po->check--;
+		if (po->accuracy == 0)
+			po->accuracy = -1;
 	}
 }
 
@@ -95,27 +98,24 @@ void		ft_mod_length(char *format, t_print *po)
 {
 	if (format[po->i] == 'h' && format[po->i + 1] == 'h')
 	{
-		po->length = 'A';
+		po->length = HH;
 		po->i += 2;
-		po->check--;
 		return ;
 	}
 	if (format[po->i] == 'l' && format[po->i + 1] == 'l')
 	{
-		po->length = 'B';
+		po->length = LL;
 		po->i += 2;
-		po->check--;
 		return ;
 	}
 	while (format[po->i] == 'h' || format[po->i] == 'l' || format[po->i] == 'L')
 	{
 		if (format[po->i] == 'h')
-			po->length = 'h';
+			po->length = H;
 		if (format[po->i] == 'l')
-			po->length = 'l';
+			po->length = L;
 		if (format[po->i] == 'L')
-			po->length = 'L';
+			po->length = LLL;
 		po->i++;
-		po->check--;
 	}
 }
