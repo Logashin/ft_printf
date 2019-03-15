@@ -13,6 +13,11 @@ int main(void)
    // ft_printf("my name %s i love sim (%c) my nick %10s. My test %5c end %%\n", "Viktor", 'T', "Tmann", 'C');
    //ft_putnbr(ft_printf("Hello my name %s, i like sim %c", "Vitia", 'A'));
 //   ft_printf("hello my name is %s, i like sim %c, my year %d, %%\n", "Viktor", 'c', 27);
- ft_putnbr(ft_printf("%d", 2147483648));
+// ft_putnbr(ft_printf("%lu\n", -42));
+//
+ 	
+	
+	printf("%d\n", ft_printf("%#.0o%#.o\n", 0, 0));
+	printf("%d\n", printf("%#.0o%#.o\n", 0, 0));
   	return (0);
 }

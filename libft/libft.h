@@ -6,13 +6,14 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 14:48:58 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/13 18:35:21 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/15 16:39:47 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# include <stdlib.h>
 
 typedef struct		s_list
 {
@@ -88,5 +89,7 @@ void				ft_lstiter(t_list *lst, void (*f) (t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f) (t_list *elem));
 int					ft_countc(char *src, char c);
 char				*ft_l_itoa(long long n);
+char				*ft_ltoa_base(long long int nbr, int base);
+char				*ft_utoa_base(unsigned long long nbr, int base);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:02:19 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/13 19:52:03 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/15 18:19:00 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ int			ft_type(char *format, t_print *po, va_list ap)
 		stop = ft_print_string(po, ap);
 	if (format[po->i] == 'd' || format[po->i] == 'i')
 		stop = ft_print_int(po, ap);
-	// if (format[po->i] == 'u')
-	// 	stop = 
+	if (format[po->i] == 'u')
+		stop = ft_print_u(po, ap);
+	if (format[po->i] == 'o')
+		stop = ft_print_o(po, ap);
 	po->i += stop;
 	return (stop);
 }

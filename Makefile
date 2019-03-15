@@ -15,6 +15,8 @@ SRC = ft_printf.c \
 	ft_print_int.c \
 	ft_help_norm_for_d.c \
 	ft_mod_lenght.c \
+	ft_print_u.c \
+	ft_print_o.c \
 
 OBJ = *.o
 

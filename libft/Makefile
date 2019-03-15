@@ -65,6 +65,8 @@ FILEC =	ft_strlen.c \
 		ft_sqrt.c \
 		ft_countc.c \
 		ft_l_itoa.c \
+		ft_ltoa_base.c \
+		ft_utoa_base.c \
 		
 FILEO = $(FILEC:.c=.o)
 

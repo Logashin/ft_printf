@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 19:09:59 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/13 19:40:36 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/15 19:21:51 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void		hp2_print_accuracy_dec(char *str, t_print *po, int sizestr)
 		ft_putchar('0');
 		po->accuracy--;
 		po->returnsize++;
+		if (po->infuncheck == 0)
+			po->width--;
 	}
 	ft_putstr(str);
 	while (po->width > 0 && po->minus == 1)

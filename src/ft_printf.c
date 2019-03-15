@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:03:43 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/13 19:07:50 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/15 18:25:26 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ int			ft_check_valid_param(char *str, int i)
 		|| str[i] == '0' || str[i] == 'l' || str[i] == 'h' || str[i] == '%' ||
 		str[i] == '.' || ft_isdigit(str[i]) || str[i] == 'L' || str[i] == '*')
 		i++;
-	if (str[i] == 's' || str[i] == 's' || str[i] == 'd' || str[i] == 'i'
+	if (str[i] == 'u' || str[i] == 's' || str[i] == 'd' || str[i] == 'i'
 		|| str[i] == 's' || str[i] == 's' || str[i] == 's' ||
-			str[i] == 'c' || str[i] == 's' || str[i] == '\0')
+			str[i] == 'c' || str[i] == 'o' || str[i] == '\0')
 		try++;
 	return (try);
 }

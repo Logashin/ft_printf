@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 19:43:34 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/13 19:46:59 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/15 19:21:43 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 typedef struct		s_print
 {
+	int				infuncheck;
 	int				accuracfree;
 	int				i;
 	int				returnsize;
@@ -54,6 +55,8 @@ int					ft_print_string(t_print *po, va_list ap);
 void				ft_space_string(char *str, t_print *po);
 char				*ft_accuracy_string(char *str, t_print *po, int sizestr);
 int					ft_print_int(t_print *po, va_list ap);
+char				*ft_add_d_mod_length(t_print *po, va_list ap,
+						long long int n);
 void				ft_space_string_dec(char *str, t_print *po, int sizestr);
 void				hp_space_string_dec(char *str, t_print *po, int sizestr);
 void				ft_check_space_int(char *str, t_print *po, int sizestr);
@@ -63,7 +66,15 @@ void				ft_print_accuracy_dec(char *str, t_print *po,
 void				hp_print_accuracy_dec(char *str, t_print *po, int sizestr);
 void				hp2_print_accuracy_dec(char *str, t_print *po, int sizestr);
 void				ft_space_accuracy_dec(char *str, t_print *po, int sizestr);
-char				*ft_add_d_mod_length(t_print *po, va_list ap,
-						long long int n);
+int					ft_print_u(t_print *po, va_list ap);
+char				*ft_add_u_mod_length(t_print *po, va_list ap,
+						unsigned long long int n);
+void				ft_space_string_u(char *str, t_print *po);
+void				ft_print_accuracy_u(char *str, t_print *po,
+						int sizestr, int saveacc);
+void				hp_print_accuracy_u(char *str, t_print *po, int sizestr);
+int					ft_print_o(t_print *po, va_list ap);
+char				*ft_add_o_mod_length(t_print *po, va_list ap,
+						unsigned long long int n);
 
 #endif

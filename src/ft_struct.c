@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 19:05:43 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/13 19:42:14 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/15 19:21:38 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void			ft_clear_struct(t_print *po)
 	po->width = 0;
 	po->accuracy = 0;
 	po->accuracfree = 0;
+	po->infuncheck = 0;
 }
 
 t_print			*ft_struct_creat(t_print *po)
@@ -38,5 +39,6 @@ t_print			*ft_struct_creat(t_print *po)
 	po->accuracy = 0;
 	po->accuracfree = 0;
 	po->i = 0;
+	po->infuncheck = 0;
 	return (po);
 }
