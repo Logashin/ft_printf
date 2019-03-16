@@ -6,13 +6,13 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 16:36:54 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/15 16:47:53 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/16 18:50:22 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			nbrlen(unsigned long long nbr, unsigned long long base)
+static int	nbrlen(unsigned long long nbr, unsigned long long base)
 {
 	int i;
 

@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 16:11:52 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/15 18:14:03 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/16 21:46:06 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_add_u_mod_length(t_print *po, va_list ap,
 		n = (unsigned long long)n;
 	else
 		n = (unsigned int)n;
-	return (ft_l_itoa(n));
+	return (ft_utoa_base(n, 10));
 }
 
 char	*ft_add_o_mod_length(t_print *po, va_list ap,
@@ -66,4 +66,42 @@ char	*ft_add_o_mod_length(t_print *po, va_list ap,
 	else
 		n = (unsigned int)n;
 	return (ft_utoa_base(n, 8));
+}
+
+char	*ft_add_b_x_mod_length(t_print *po, va_list ap,
+	unsigned long long int n)
+{
+	n = va_arg(ap, unsigned long long int);
+	if (po->length == H)
+		n = (unsigned short int)n;
+	else if (po->length == HH)
+		n = (unsigned char)n;
+	else if (po->length == L)
+		n = (unsigned long int)n;
+	else if (po->length == LL)
+		n = (unsigned long long int)n;
+	else if (po->length == LLL)
+		n = (unsigned long long)n;
+	else
+		n = (unsigned int)n;
+	return (ft_utoa_base(n, 16));
+}
+
+char	*ft_add_l_x_mod_length(t_print *po, va_list ap,
+	unsigned long long int n)
+{
+	n = va_arg(ap, unsigned long long int);
+	if (po->length == H)
+		n = (unsigned short int)n;
+	else if (po->length == HH)
+		n = (unsigned char)n;
+	else if (po->length == L)
+		n = (unsigned long int)n;
+	else if (po->length == LL)
+		n = (unsigned long long int)n;
+	else if (po->length == LLL)
+		n = (unsigned long long)n;
+	else
+		n = (unsigned int)n;
+	return (ft_utoa_base_little(n, 16));
 }

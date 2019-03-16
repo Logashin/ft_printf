@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 19:43:34 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/15 19:21:43 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/16 21:00:05 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,16 @@ void				hp_print_accuracy_u(char *str, t_print *po, int sizestr);
 int					ft_print_o(t_print *po, va_list ap);
 char				*ft_add_o_mod_length(t_print *po, va_list ap,
 						unsigned long long int n);
+int					ft_print_big_x(t_print *po, va_list ap);
+char				*ft_add_b_x_mod_length(t_print *po, va_list ap,
+						unsigned long long int n);
+int					ft_print_little_x(t_print *po, va_list ap);
+char				*ft_add_l_x_mod_length(t_print *po, va_list ap,
+						unsigned long long int n);
+void				ft_space_string_x_little(char *str, t_print *po, int sizestr);
+void				hp_print_0x_little(t_print *po);
+void				ft_space_string_x_big(char *str, t_print *po, int sizestr);
+void				hp_print_0x_big(t_print *po);
+
 
 #endif

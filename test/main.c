@@ -17,7 +17,11 @@ int main(void)
 //
  	
 	
-	printf("%d\n", ft_printf("%#.0o%#.o\n", 0, 0));
-	printf("%d\n", printf("%#.0o%#.o\n", 0, 0));
+	printf("%d\n", ft_printf("%-5lu", (unsigned long)-20));
+	printf("%d\n", printf("%-5lu", (unsigned long)-20));
+
+   // printf("%d\n", ft_printf("%d", 42));
+	// printf("%d\n", printf("%d", 42));
+
   	return (0);
 }

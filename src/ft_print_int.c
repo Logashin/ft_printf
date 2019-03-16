@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:02:44 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/15 19:21:59 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/16 21:32:18 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,10 +122,16 @@ int			ft_print_int(t_print *po, va_list ap)
 	long long int		sizestr;
 
 	str = ft_add_d_mod_length(po, ap, 0);
-	if (po->accuracy == -1 && *str == '0' && po->width == 0)
+	if (po->accuracy == -1 && *str == '0' && po->width == 0 && po->space == 0)
 		return (1);
 	if (po->accuracy == -1 && *str == '0' && po->width > 0)
 		*str = ' ';
+	if (po->accuracy == -1 && *str == '0' && po->width == 0 && po->space == 1)
+	{
+		ft_putchar(' ');
+		po->returnsize++;
+		return (1);
+	}
 	sizestr = (int)ft_strlen(str);
 	if (po->accuracy == 0)
 		ft_space_string_dec(str, po, 0);
