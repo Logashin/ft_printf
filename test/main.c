@@ -17,8 +17,22 @@ int main(void)
 //
  	
 	
-	printf("%d\n", ft_printf("%-5lu", (unsigned long)-20));
-	printf("%d\n", printf("%-5lu", (unsigned long)-20));
+	// printf("%d\n", ft_printf("%-5lu", (unsigned long)-20));
+	// printf("%d\n", printf("%-5lu", (unsigned long)-20));
+
+   // printf("%d|\n", printf("%.0s\n%s%---12s", "hi", "coco", NULL));
+   // printf("%d|\n", ft_printf("%.0s\n%s%---12s", "hi", "coco", NULL));
+
+   // printf("%d|\n", printf("Coucou %.0s\n%s%---12s", "hi", "coco", NULL));
+   // printf("\n");
+   // printf("%d|\n", ft_printf("Coucou %.0s\n%s%---12s", "hi", "coco", NULL));
+
+
+   printf("%d|\n", printf("%"));
+   printf("\n");
+   printf("%d|\n", ft_printf("%"));
+
+   // ft_printf("%lld", -9223372036854775808);
 
    // printf("%d\n", ft_printf("%d", 42));
 	// printf("%d\n", printf("%d", 42));

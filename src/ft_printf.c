@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:03:43 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/16 17:12:29 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/17 17:38:04 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ void		ft_parse_format(char *format, t_print *po, va_list ap)
 		if (format[po->i] == '%' && format[po->i + 1] != '\0')
 		{
 			po->i++;
-			if (ft_check_valid_param(format, po->i) == 1)
+			if (ft_check_valid_param(format, po->i) == 1 || format[po->i] == '%')
 				ft_param(format, po, ap);
 			else
+			{
 				ft_putchar('%');
+				po->returnsize++;
+			}
 		}
 		else if (format[po->i] != '\0')
 		{

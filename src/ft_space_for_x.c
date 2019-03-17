@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 20:32:53 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/16 20:59:24 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/17 13:24:19 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void		hp_print_0x_big(t_print *po)
 	}
 }
 
-void			ft_space_string_x_big(char *str, t_print *po, int sizestr)
+void		ft_space_string_x_big(char *str, t_print *po, int sizestr)
 {
 	sizestr = ft_strlen(str);
 	po->returnsize += sizestr;

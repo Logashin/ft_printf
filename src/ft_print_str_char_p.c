@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:03:15 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/13 19:10:58 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/17 15:16:43 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,21 +67,6 @@ int			ft_print_char(t_print *po, va_list ap)
 	return (1);
 }
 
-int			ft_print_string(t_print *po, va_list ap)
-{
-	char *str;
-
-	str = va_arg(ap, char*);
-	if (str == NULL)
-	{
-		ft_putstr("(null)");
-		po->returnsize += 6;
-	}
-	else
-		ft_space_string(str, po);
-	return (1);
-}
-
 void		ft_space_string(char *str, t_print *po)
 {
 	int sizestr;
@@ -119,7 +104,22 @@ char		*ft_accuracy_string(char *str, t_print *po, int sizestr)
 		po->width += sizestr;
 	}
 	str = ft_strsub(str, 0, po->accuracy);
-	po->returnsize = (int)ft_strlen(str);
+	po->returnsize += (int)ft_strlen(str);
 	po->accuracfree = 1;
 	return (str);
+}
+
+int			ft_print_string(t_print *po, va_list ap)
+{
+	char *str;
+
+	str = va_arg(ap, char*);
+	if (po->accuracy == -1 && po->width == 0)
+		return (1);
+	if (po->accuracy == -1 && po->width > 0)
+		str = " ";
+	if (str == NULL)
+		str = "(null)";
+	ft_space_string(str, po);
+	return (1);
 }
