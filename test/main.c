@@ -28,14 +28,42 @@ int main(void)
    // printf("%d|\n", ft_printf("Coucou %.0s\n%s%---12s", "hi", "coco", NULL));
 
 
-   printf("%d|\n", printf("%"));
-   printf("\n");
-   printf("%d|\n", ft_printf("%"));
+   // printf("%d\n", printf("%#x", 42));
+   // printf("\n");
+   // printf("%d\n", ft_printf("%#x", 42));
+
+   // printf("%d\n", printf("%#7.5X%0006.2x et %lX!", 0xab, 0x876, 0xff11ff11ff1));
+   // printf("\n");
+   // printf("%d\n", ft_printf("%#7.5X%0006.2x et %lX!", 0xab, 0x876, 0xff11ff11ff1));
 
    // ft_printf("%lld", -9223372036854775808);
+      // ft_printf("%s", -92233720);
 
-   // printf("%d\n", ft_printf("%d", 42));
-	// printf("%d\n", printf("%d", 42));
+   // printf("%d\n", printf("%---10.6xet\n", 0xaabb));
+   // printf("%d\n", ft_printf("%---10.6xet\n", 0xaabb));
 
+   // printf("|%d\n", printf("%#.4X et %#0012x %#04hX !!", 0xaef, 0xe, (unsigned short)0));
+   // printf("\n");
+   // printf("|%d\n", ft_printf("%#.4X et %#0012x %#04hX !!", 0xaef, 0xe, (unsigned short)0));
+   
+   // printf("|%d\n", printf("%0##0.4X %#4.2Xet c'est fini \n", 0x037a, 0x9e));
+   // printf("\n");
+   // printf("|%d\n", ft_printf("%0##0.4X %#4.2Xet c'est fini \n", 0x037a, 0x9e));
+
+   // printf("|%d\n", printf("%###.5x", 0));
+   // printf("\n");
+   // printf("|%d\n", ft_printf("%###.5x", 0));
+
+
+   // <_____>
+   printf("\n");
+   ft_printf("{% 03d}", 0);
+   printf("\n");
+   printf("{% 03d}", 0);
+printf("\n");
+
+   // printf("%lc, %lc", L'ÊM-^ZM-^V', L'ÿ≠');
+   // printf("\n");
+   // ft_printf("%lc, %lc", L'ÊM-^ZM-^V', L'ÿ≠');
   	return (0);
 }

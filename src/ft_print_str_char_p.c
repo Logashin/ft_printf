@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:03:15 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/17 15:16:43 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/17 19:38:22 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ int			ft_print_procent(t_print *po)
 		po->width--;
 		while (po->width && po->minus == 0)
 		{
-			ft_putchar(' ');
+			if (po->zero == 1)
+				ft_putchar('0');
+			else
+				ft_putchar(' ');
 			po->width--;
 			po->returnsize++;
 		}
@@ -38,17 +41,17 @@ int			ft_print_procent(t_print *po)
 	return (1);
 }
 
-int			ft_print_char(t_print *po, va_list ap)
+int			ft_print_char(t_print *po, char sim)
 {
-	char sim;
-
-	sim = (char)va_arg(ap, int);
 	if (po->width)
 	{
 		po->width--;
 		while (po->width && po->minus == 0)
 		{
-			ft_putchar(' ');
+			if (po->zero == 1)
+				ft_putchar('0');
+			else
+				ft_putchar(' ');
 			po->width--;
 			po->returnsize++;
 		}

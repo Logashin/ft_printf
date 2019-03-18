@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 19:50:55 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/17 16:17:29 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/17 21:02:37 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		ft_space_string_u(char *str, t_print *po)
 	}
 	while (po->width > sizestr && po->minus == 0)
 	{
-		if (po->zero == 1 && po->sharp == 0)
+		if (po->zero == 1 && po->accuracy == 0)
 			ft_putchar('0');
 		else
 			ft_putchar(' ');

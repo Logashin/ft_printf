@@ -6,15 +6,15 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 20:32:53 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/17 13:24:19 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/18 16:02:32 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/ft_printf.h"
 
-void		hp_print_0x_little(t_print *po)
+void		hp_print_0x_little(t_print *po, char *str)
 {
-	if (po->sharp == 1 && po->zero == 1 && po->width > 0)
+	if (po->sharp == 1 && po->zero == 1 && po->width > 0 && *str != '0')
 	{
 		ft_putstr("0x");
 		po->width -= 2;
@@ -26,15 +26,10 @@ void		ft_space_string_x_little(char *str, t_print *po, int sizestr)
 {
 	sizestr = ft_strlen(str);
 	po->returnsize += sizestr;
-	hp_print_0x_little(po);
-	if (*str == '-' && po->width > sizestr && po->zero == 1)
-	{
-		ft_putchar('-');
-		str++;
-	}
+	hp_print_0x_little(po, str);
 	while (po->width > sizestr && po->minus == 0)
 	{
-		if (po->zero == 1)
+		if (po->zero == 1 && po->accuracy == 0)
 			ft_putchar('0');
 		else
 			ft_putchar(' ');
@@ -50,13 +45,14 @@ void		ft_space_string_x_little(char *str, t_print *po, int sizestr)
 	}
 }
 
-void		hp_print_0x_big(t_print *po)
+void		hp_print_0x_big(t_print *po, char *str)
 {
-	if (po->sharp == 1 && po->zero == 1 && po->width > 0)
+	if (po->sharp == 1 && po->zero == 1 && po->width > 0 && *str != '0')
 	{
 		ft_putstr("0X");
 		po->width -= 2;
 		po->returnsize += 2;
+		return ;
 	}
 }
 
@@ -64,12 +60,7 @@ void		ft_space_string_x_big(char *str, t_print *po, int sizestr)
 {
 	sizestr = ft_strlen(str);
 	po->returnsize += sizestr;
-	hp_print_0x_big(po);
-	if (*str == '-' && po->width > sizestr && po->zero == 1)
-	{
-		ft_putchar('-');
-		str++;
-	}
+	hp_print_0x_big(po, str);
 	while (po->width > sizestr && po->minus == 0)
 	{
 		if (po->zero == 1)
