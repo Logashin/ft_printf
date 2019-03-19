@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:03:15 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/19 13:08:27 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/19 15:18:47 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void		ft_space_string(char *str, t_print *po)
 {
 	int sizestr;
 
-	sizestr = (int)ft_strlen(str);
+	sizestr = ft_strlen(str);
 	if (po->accuracy > 0)
 		str = ft_accuracy_string(str, po, sizestr);
 	else

@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:02:19 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/18 19:17:52 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/19 15:24:07 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int			ft_type(char *format, t_print *po, va_list ap)
 	stop = 0;
 	if (format[po->i] == '%')
 		stop = ft_print_procent(po);
-	if (format[po->i] == 'c' || format[po->i] == 'C')
+	if (format[po->i] == 'c')
 		stop = ft_print_char(po, (char)va_arg(ap, int));
 	if (format[po->i] == 's')
 		stop = ft_print_string(po, ap);

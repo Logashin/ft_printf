@@ -75,13 +75,18 @@ int main(void)
    // printf("%d", ft_printf("%2.9p", 1234));
    // printf("\n");
 
-   // printf("%d", printf("%.4O", 42));
+   // printf("%d", printf("42%42.40i42", -1119552356));
    // printf("\n");
-   // printf("%d", ft_printf("%.4O", 42));
+   // printf("%d", ft_printf("42%42.40i42", -1119552356));
    // printf("\n");
 
-   printf( "%d\n", ft_printf("%lc, %lc", L'ÊM-^ZM-^V', L'ÿ≠'));
-    printf("%d\n\n", printf("%lc, %lc", L'ÊM-^ZM-^V', L'ÿ≠'));
+   printf("|%d", printf("%-10.2s!!", 0x45));
+   printf("\n");
+   printf("|%d", ft_printf("%-10.2s!!", "0x45"));
+   printf("\n");
+
+   // printf( "%d\n", ft_printf("%lc, %lc", L'ÊM-^ZM-^V', L'ÿ≠'));
+   //  printf("%d\n\n", printf("%lc, %lc", L'ÊM-^ZM-^V', L'ÿ≠'));
 
   	return (0);
 }
