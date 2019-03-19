@@ -15,8 +15,9 @@ SRC = ft_printf.c \
 	ft_print_int.c \
 	ft_help_norm_for_d.c \
 	ft_mod_lenght.c \
+	ft_mod_lenght_2.c \
 	ft_print_u.c \
-	ft_print_o.c \
+	ft_print_o_p.c \
 	ft_space_for_x.c \
 	ft_print_x.c \
 

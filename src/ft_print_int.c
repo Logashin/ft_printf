@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:02:44 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/18 17:51:08 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/18 21:23:42 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void		ft_check_space(char *str, t_print *po, int sizestr)
 		ft_putchar('+');
 		po->plus = 0;
 		po->returnsize++;
+		po->width--;
 	}
 }
 

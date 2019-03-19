@@ -56,14 +56,32 @@ int main(void)
 
 
    // <_____>
-   printf("\n");
-   ft_printf("{% 03d}", 0);
-   printf("\n");
-   printf("{% 03d}", 0);
-printf("\n");
+//    printf("\n");
+//    ft_printf("{% 03d}", 0);
+//    printf("\n");
+//    printf("{% 03d}", 0);
+// printf("\n");
 
    // printf("%lc, %lc", L'ÊM-^ZM-^V', L'ÿ≠');
    // printf("\n");
    // ft_printf("%lc, %lc", L'ÊM-^ZM-^V', L'ÿ≠');
+
+   // char *a = ft_strdup("123");
+   // printf("%p", NULL);
+   // printf("\n");
+   // ft_printf("%p", NULL);
+   // printf("%d", printf("%2.9p", 1234));
+   // printf("\n");
+   // printf("%d", ft_printf("%2.9p", 1234));
+   // printf("\n");
+
+   // printf("%d", printf("%.4O", 42));
+   // printf("\n");
+   // printf("%d", ft_printf("%.4O", 42));
+   // printf("\n");
+
+   printf( "%d\n", ft_printf("%lc, %lc", L'ÊM-^ZM-^V', L'ÿ≠'));
+    printf("%d\n\n", printf("%lc, %lc", L'ÊM-^ZM-^V', L'ÿ≠'));
+
   	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 19:09:59 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/18 13:29:38 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/18 21:34:27 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void		hp_check_space(char *str, t_print *po, int sizestr)
 {
-	if (po->space == 0 && str[0] != '-' && po->plus == 1
-			&& po->width > sizestr + 1 && po->minus == 0)
-		po->width--;
 	if (po->space == 1 && str[0] != '-' && po->plus == 1
 			&& po->width > sizestr + 1 && po->minus == 0)
 		po->width--;

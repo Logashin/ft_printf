@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:03:15 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/17 19:38:22 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/19 13:08:27 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,11 +116,13 @@ int			ft_print_string(t_print *po, va_list ap)
 {
 	char *str;
 
-	str = va_arg(ap, char*);
+	str = (char*)va_arg(ap, char*);
 	if (po->accuracy == -1 && po->width == 0)
 		return (1);
 	if (po->accuracy == -1 && po->width > 0)
 		str = " ";
+	if (po->accuracy == -1 && po->width > 0 && po->zero == 1)
+		str = "0";
 	if (str == NULL)
 		str = "(null)";
 	ft_space_string(str, po);

@@ -6,13 +6,13 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 16:36:54 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/16 18:50:22 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/18 19:42:02 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	nbrlen(unsigned long long nbr, unsigned long long base)
+static int	nbrlen(unsigned long int nbr, int base)
 {
 	int i;
 
@@ -27,10 +27,10 @@ static int	nbrlen(unsigned long long nbr, unsigned long long base)
 	return (i);
 }
 
-char		*ft_utoa_base(unsigned long long nbr, int base)
+char		*ft_utoa_base(unsigned long int nbr, int base)
 {
 	char				*str;
-	unsigned long long	len;
+	unsigned long int	len;
 
 	len = nbrlen(nbr, base);
 	if (!(str = (char*)malloc(sizeof(char) * len + 1)))
