@@ -20,6 +20,7 @@ SRC = ft_printf.c \
 	ft_print_o_p.c \
 	ft_space_for_x.c \
 	ft_print_x.c \
+	ft_print_float.c \
 
 OBJ = *.o
 

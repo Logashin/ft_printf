@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 16:11:52 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/16 21:46:06 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/20 13:58:30 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_add_d_mod_length(t_print *po, va_list ap, long long int n)
 		n = (long long)n;
 	else
 		n = (int)n;
-	return (ft_l_itoa(n));
+	return (ft_ltoa_base(n, 10));
 }
 
 char	*ft_add_u_mod_length(t_print *po, va_list ap,

@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 19:43:34 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/19 14:00:26 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/20 16:01:10 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct		s_print
 }					t_print;
 
 int					ft_printf(const char *format, ...);
-int					ft_check_valid_param(char *str, int i);
+int					ft_check_valid_param(char *str, int i, t_print *po);
 t_print				*ft_struct_creat(t_print *po);
 void				ft_clear_struct(t_print *po);
 void				ft_parse_format(char *format, t_print *po, va_list ap);
@@ -95,5 +95,7 @@ int					ft_print_p(t_print *po, va_list ap);
 int					ft_print_help_p(t_print *po, char *str);
 char				*ft_add_l_p_mod_length(t_print *po, va_list ap,
 						unsigned long long int n);
+int					ft_print_float(t_print *po, va_list ap);
+char				*ft_add_f_mod_length(t_print *po, va_list ap, long long int n);
 
 #endif

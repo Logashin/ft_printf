@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:02:19 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/19 15:24:07 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/20 14:49:24 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int			ft_type(char *format, t_print *po, va_list ap)
 		stop = ft_print_little_x(po, ap);
 	if (format[po->i] == 'p')
 		stop = ft_print_p(po, ap);
+	if (format[po->i] == 'f')
+		stop = ft_print_float(po, ap);
 	po->i += stop;
 	return (stop);
 }
@@ -94,8 +96,6 @@ void		ft_accuracy(char *format, t_print *po)
 		{
 			po->accuracy = po->accuracy * 10 + format[po->i] - '0';
 			po->i++;
-			if (po->accuracy == 0)
-				po->accuracy = -1;
 		}
 		if (po->accuracy == 0)
 			po->accuracy = -1;

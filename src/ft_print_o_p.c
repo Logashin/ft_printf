@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 18:10:36 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/19 14:00:15 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/20 13:40:04 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int		ft_print_o(t_print *po, va_list ap)
 		str = ft_strjoin("0", str);
 		free(tmp);
 	}
+	po->plus = 0;
 	if (po->accuracy == 0)
 		ft_space_string_u(str, po);
 	else

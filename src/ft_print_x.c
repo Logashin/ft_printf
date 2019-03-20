@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 12:43:10 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/18 17:35:00 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/19 22:18:52 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int			ft_print_big_x(t_print *po, va_list ap)
 		str = ft_strjoin("0X", str);
 		free(tmp);
 	}
+	po->plus = 0;
 	if (po->accuracy == 0)
 		ft_space_string_x_big(str, po, 0);
 	else
@@ -52,6 +53,7 @@ int			ft_print_little_x(t_print *po, va_list ap)
 		str = ft_strjoin("0x", str);
 		free(tmp);
 	}
+	po->plus = 0;
 	if (po->accuracy == 0)
 		ft_space_string_x_little(str, po, 0);
 	else
@@ -67,17 +69,25 @@ void		ft_print_accuracy_x_b(char *str, t_print *po,
 	sizestr = ft_strlen(str);
 	if (po->accuracy < sizestr)
 	{
-		ft_space_string_x_big(str, po, 0);
+		ft_space_string_x_little(str, po, 0);
 		return ;
+	}
+	if (po->accuracy >= sizestr)
+		po->accuracy -= sizestr;
+	po->width -= po->accuracy + sizestr;
+	if (po->sharp == 1 && *str != '0')
+		po->width -= 2;
+	while (0 < po->width && po->minus == 0)
+	{
+		ft_putchar(' ');
+		po->returnsize++;
+		po->width--;
 	}
 	if (po->sharp == 1 && *str != '0')
 	{
 		ft_putstr("0X");
 		po->returnsize += 2;
 	}
-	hp_print_accuracy_u(str, po, sizestr);
-	if (po->width > po->accuracy)
-		ft_space_accuracy_dec(str, po, sizestr);
 	hp2_print_accuracy_dec_x(str, po, sizestr);
 }
 
@@ -91,25 +101,27 @@ void		ft_print_accuracy_x_l(char *str, t_print *po,
 		ft_space_string_x_little(str, po, 0);
 		return ;
 	}
+	if (po->accuracy >= sizestr)
+		po->accuracy -= sizestr;
+	po->width -= po->accuracy + sizestr;
+	if (po->sharp == 1 && *str != '0')
+		po->width -= 2;
+	while (0 < po->width && po->minus == 0)
+	{
+		ft_putchar(' ');
+		po->returnsize++;
+		po->width--;
+	}
 	if (po->sharp == 1 && *str != '0')
 	{
 		ft_putstr("0x");
 		po->returnsize += 2;
 	}
-	hp_print_accuracy_u(str, po, sizestr);
-	if (po->width > po->accuracy)
-		ft_space_accuracy_dec(str, po, sizestr);
 	hp2_print_accuracy_dec_x(str, po, sizestr);
 }
 
 void		hp2_print_accuracy_dec_x(char *str, t_print *po, int sizestr)
 {
-	if (po->infuncheck == 1)
-	{
-		po->width = 0;
-		po->width += sizestr + po->accuracy - sizestr;
-	}
-	po->accuracy -= sizestr;
 	while (po->accuracy > 0)
 	{
 		ft_putchar('0');
