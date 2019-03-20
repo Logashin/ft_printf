@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 19:43:34 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/20 16:01:10 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/20 18:06:09 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void				hp_space_string_dec(char *str, t_print *po, int sizestr);
 void				ft_check_space_int(char *str, t_print *po, int sizestr);
 void				hp_check_space(char *str, t_print *po, int sizestr);
 void				ft_print_accuracy_dec(char *str, t_print *po,
-						int sizestr, int saveacc);
+						int sizestr);
 void				hp_print_accuracy_dec(char *str, t_print *po, int sizestr);
 void				hp2_print_accuracy_dec(char *str, t_print *po, int sizestr);
 void				ft_space_accuracy_dec(char *str, t_print *po, int sizestr);

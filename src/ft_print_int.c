@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:02:44 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/20 17:28:45 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/20 18:06:18 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,8 @@ void		ft_space_string_dec(char *str, t_print *po, int sizestr)
 }
 
 void		ft_print_accuracy_dec(char *str, t_print *po,
-	int sizestr, int saveacc)
+	int sizestr)
 {
-	saveacc = po->accuracy;
 	sizestr = (int)ft_strlen(str);
 	if (po->accuracy < sizestr)
 	{
@@ -143,7 +142,7 @@ int			ft_print_int(t_print *po, va_list ap)
 	if (po->accuracy == 0)
 		ft_space_string_dec(str, po, 0);
 	else
-		ft_print_accuracy_dec(str, po, 0, 0);
+		ft_print_accuracy_dec(str, po, 0);
 	free(str);
 	return (1);
 }
