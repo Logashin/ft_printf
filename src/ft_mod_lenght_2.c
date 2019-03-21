@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 20:13:43 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/19 17:33:59 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/21 16:06:44 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,21 @@ char		*ft_add_l_p_mod_length(t_print *po, va_list ap,
 	return (ft_utoa_base_little(n, 16));
 }
 
-char		*ft_add_f_mod_length(t_print *po, va_list ap,
-	long long int n)
+double		ft_add_f_mod_length(t_print *po, va_list ap,
+	double long n)
 {
-	n = va_arg(ap, long long int);
+	n = va_arg(ap, double long);
 	if (po->length == H)
-		n = (short int)n;
+		n = (double)n;
 	else if (po->length == HH)
-		n = (char)n;
+		n = (double)n;
 	else if (po->length == L)
-		n = (long int)n;
+		n = (double long)n;
 	else if (po->length == LL)
-		n = (long long int)n;
+		n = (double long)n;
 	else if (po->length == LLL)
-		n = (long long)n;
+		n = (double long)n;
 	else
-		n = (int)n;
-	return (ft_l_itoa(n));
+		n = (double)n;
+	return (n);
 }

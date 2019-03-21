@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 19:43:34 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/21 15:23:56 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/21 16:06:50 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,6 @@ int					ft_print_help_p(t_print *po, char *str);
 char				*ft_add_l_p_mod_length(t_print *po, va_list ap,
 						unsigned long long int n);
 int					ft_print_float(t_print *po, va_list ap);
-char				*ft_add_f_mod_length(t_print *po, va_list ap, long long int n);
+double				ft_add_f_mod_length(t_print *po, va_list ap, double long n);
 
 #endif
