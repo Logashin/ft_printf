@@ -915,33 +915,52 @@ int main(void)
    // printf("|%d", ft_printf("%-10.2s!!", "0x45"));
    // printf("\n");
 
-printf   ("or = %0#10.0x!\n", 0);
-ft_printf("my = %0#10.0x!\n\n", 0);
+printf("|%d\n", printf   ("or %0#42.6llX", -2107738761));
+printf("|%d\n", ft_printf("my %0#42.6llX", -2107738761));
 
-printf("or = %0#10.0x %0#x\n", 12345, 0);
-ft_printf("my = %0#10.0x %0#x\n\n", 12345, 0);
+printf("or = %0#10.0X %0#X\n", 12345, 0);
+ft_printf("my = %0#10.0X %0#X\n\n", 12345, 0);
 
-printf("or = %#48.2llx!!!\n", 1985512325);
-ft_printf("my = %#48.2llx!!!\n\n", 1985512325);
+printf("or = %#48.2llX\n", 1985512325);
+ft_printf("my = %#48.2llX\n\n", 1985512325);
 
-   ft_printf("%10x\n", 42);
-   printf("%10x\n\n", 42);
-   printf("%010x\n", 542);
-   ft_printf("%010x\n\n", 542);
-   printf("%#08x\n", 42);
-   ft_printf("%#08x\n", 42);
-	     printf("%d|\n", ft_printf("%0#10.0x", 12345));
-	      printf("%d|\n\n", printf("%0#10.0x", 12345));
-   printf("%d|\n", printf("^.^/%#20.8hx^.^/" , 0));
-   printf("%d|\n\n", ft_printf("^.^/%#20.8hx^.^/", 0));
+ft_printf("my 42%-#52.5llX42", 401929328);
+printf("\n");
+printf   ("or 42%-#52.5llX42", 401929328);
+printf("\n");
 
-       printf("%d|\n", printf("%#.4x et %#0012x %#04hx !!", 0xaef, 0xe, (unsigned short)0));
-   printf("%d|\n\n", ft_printf("%#.4x et %#0012x %#04hx !!", 0xaef, 0xe, (unsigned short)0));
+printf   ("or!%#-47.2hX!\n", -2143056240);
+ft_printf("my!%#-47.2hX!\n\n", -2143056240);
 
-       printf("%d|\n", printf("%0006.2x et %lx!", 0x876, 0xff11ff11ff1));
-   printf("%d|\n\n", ft_printf("%0006.2x et %lx!", 0x876, 0xff11ff11ff1));
-    printf("%d\n\n", printf("%-12hhx", 23695));
-	printf( "%d\n", ft_printf("%-12hhx", 23695));
+printf   ("or = %0#10.0X!\n", 0);
+ft_printf("my = %0#10.0X!\n\n", 0);
+
+
+printf("or = %#48.2llX!!!\n", 1985512325);
+ft_printf("my = %#48.2llX!!!\n\n", 1985512325);
+
+printf("%d|\n", printf   ("or %-#58.1hhX!", -775135724));
+printf("%d|\n\n", ft_printf("my %-#58.1hhX!", -775135724));
+
+
+   ft_printf("%10X\n", 42);
+   printf("%10X\n\n", 42);
+   printf("%010X\n", 542);
+   ft_printf("%010X\n\n", 542);
+   printf("%#08X\n", 42);
+   ft_printf("%#08X\n", 42);
+	     printf("%d|\n", ft_printf("%0#10.0X", 12345));
+	      printf("%d|\n\n", printf("%0#10.0X", 12345));
+   printf("%d|\n", printf("^.^/%#20.8hX^.^/" , 0));
+   printf("%d|\n\n", ft_printf("^.^/%#20.8hX^.^/", 0));
+
+       printf("%d|\n", printf("%#.4X et %#0012X %#04hX !!", 0xaef, 0xe, (unsigned short)0));
+   printf("%d|\n\n", ft_printf("%#.4X et %#0012X %#04hX !!", 0xaef, 0xe, (unsigned short)0));
+
+       printf("%d|\n", printf("%0006.2X et %lX!", 0x876, 0xff11ff11ff1));
+   printf("%d|\n\n", ft_printf("%0006.2X et %lX!", 0x876, 0xff11ff11ff1));
+    printf("%d\n\n", printf("%-12hhX", 23695));
+	printf( "%d\n", ft_printf("%-12hhX", 23695));
 
 //    printf( "%d\n", ft_printf("%#.4x et %#0012x %#04hx !!", 0xaef, 0xe, (unsigned short)0));
 //     printf("%d\n\n", printf("%#.4x et %#0012x %#04hx !!", 0xaef, 0xe, (unsigned short)0));
