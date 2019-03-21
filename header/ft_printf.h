@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 19:43:34 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/20 18:06:09 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/21 15:23:56 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void				ft_print_accuracy_x_b(char *str, t_print *po,
 void				ft_print_accuracy_x_l(char *str, t_print *po,
 						int sizestr, int saveacc);
 void				hp2_print_accuracy_dec_x(char *str, t_print *po, int sizestr);
+void				hp_norm_space_x(t_print *po, int sizestr);
 int					ft_print_p(t_print *po, va_list ap);
 int					ft_print_help_p(t_print *po, char *str);
 char				*ft_add_l_p_mod_length(t_print *po, va_list ap,
