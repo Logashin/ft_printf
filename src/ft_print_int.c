@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:02:44 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/20 18:06:18 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/22 14:53:30 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void		ft_check_space(char *str, t_print *po, int sizestr)
 
 void		ft_space_string_dec(char *str, t_print *po, int sizestr)
 {
-	sizestr = (int)ft_strlen(str);
+	sizestr += (int)ft_strlen(str);
 	po->returnsize += sizestr;
 	if (po->plus == 1 || po->space == 1)
 		ft_check_space(str, po, sizestr);

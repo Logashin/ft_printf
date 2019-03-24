@@ -21,6 +21,8 @@ SRC = ft_printf.c \
 	ft_space_for_x.c \
 	ft_print_x.c \
 	ft_print_float.c \
+	ft_float_accuracy.c \
+	ft_float_roun.c \
 
 OBJ = *.o
 

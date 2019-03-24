@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 19:43:34 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/21 16:06:50 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/24 20:56:16 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,12 @@ int					ft_print_help_p(t_print *po, char *str);
 char				*ft_add_l_p_mod_length(t_print *po, va_list ap,
 						unsigned long long int n);
 int					ft_print_float(t_print *po, va_list ap);
-double				ft_add_f_mod_length(t_print *po, va_list ap, double long n);
+void				print_space_float(t_print *po, char *celstr, char *drobstr);
+char				*print_drobnoe(int nbr, double drobnoe, int **sim);
+char				*ft_float_ac_0(long double nbr, int *sim);
+char				*ft_float_ac_big(t_print *po, long double nbr, int *sim);
+void				ft_float_ac_minus(t_print *po, long double nbr);
+char				*ft_roun(t_print *po, char *celoe, char *drobnoe, int sim);
+// double				ft_add_f_mod_length(t_print *po, va_list ap, double long n);
 
 #endif
