@@ -68,6 +68,7 @@ FILEC =	ft_strlen.c \
 		ft_ltoa_base.c \
 		ft_utoa_base.c \
 		ft_utoa_base_little.c \
+		ft_join_free.c \
 
 FILEO = $(FILEC:.c=.o)
 

@@ -6,13 +6,13 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/24 14:33:36 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/24 20:48:36 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/25 16:17:27 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/ft_printf.h"
 
-char		*print_drobnoe(int nbr, double drobnoe, int **sim)
+char		*print_drobnoe(int nbr, long double drobnoe, int **sim)
 {
 	char	*str;
 	int		i;
@@ -26,7 +26,7 @@ char		*print_drobnoe(int nbr, double drobnoe, int **sim)
 	{
 		drobnoe *= 10;
 		tmp = drobnoe;
-		str[i] = (unsigned long long)drobnoe % 10 + '0';
+		str[i] = (unsigned long long)drobnoe + '0';
 		drobnoe -= tmp;
 		i++;
 	}
@@ -63,14 +63,13 @@ char		*ft_float_ac_big(t_print *po, long double nbr, int *sim)
 	return (drobstr);
 }
 
-void		ft_float_ac_minus(t_print *po, long double nbr)
+void		ft_float_ac_minus(t_print *po, char *celstr)
 {
-	char				*str;
-	long long			celoe;
-
-	celoe = nbr;
-	str = ft_l_itoa(celoe);
-	ft_space_string_dec(str, po, 0);
+	if (po->sharp == 1 && po->minus == 0)
+		po->width--;
+	else if (po->sharp == 1 && po->accuracy == -1)
+		po->width--;
+	ft_space_string_dec(celstr, po, 0);
 	if (po->sharp == 1 && po->minus == 0)
 		ft_putchar('.');
 	else if (po->sharp == 1 && po->accuracy == -1)

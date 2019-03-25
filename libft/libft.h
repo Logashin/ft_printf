@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 14:48:58 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/18 19:43:01 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/25 13:54:10 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,6 @@ char				*ft_l_itoa(long long n);
 char				*ft_ltoa_base(long long int nbr, int base);
 char				*ft_utoa_base(unsigned long int nbr, int base);
 char				*ft_utoa_base_little(unsigned long long nbr, int base);
+char				*ft_strjoin_free(char *s1, char *s2, int free1, int free2);
 
 #endif
