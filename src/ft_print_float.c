@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 21:14:13 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/25 16:21:08 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/25 16:47:10 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ int			ft_print_float(t_print *po, va_list ap, int sim, char *drobstr)
 
 	if (po->length == LLL)
 		nbr = va_arg(ap, long double);
-	else
-		nbr = va_arg(ap, double);
+	nbr = va_arg(ap, double);
 	celoe = nbr;
 	celstr = ft_l_itoa(celoe);
 	if (po->accuracy == 0)
@@ -32,7 +31,9 @@ int			ft_print_float(t_print *po, va_list ap, int sim, char *drobstr)
 	{
 		drobstr = ft_float_ac_big(po, nbr, &sim);
 		ft_roun(&celstr, &drobstr, sim, 0);
+		free(drobstr);
 		ft_float_ac_minus(po, celstr);
+		free(celstr);
 		return (1);
 	}
 	ft_roun(&celstr, &drobstr, sim, 0);
@@ -50,11 +51,14 @@ void		print_space_float(t_print *po, char *celstr, char *drobstr)
 		ft_space_string_dec(celstr, po, ft_strlen(drobstr) + 1);
 		ft_putchar('.');
 		ft_putstr(drobstr);
+		free(drobstr);
+		free(celstr);
 	}
 	else
 	{
 		celstr = ft_strjoin_free(celstr, ".", 1, 0);
 		strjoin = ft_strjoin_free(celstr, drobstr, 1, 1);
 		ft_space_string_dec(strjoin, po, 0);
+		free(strjoin);
 	}
 }

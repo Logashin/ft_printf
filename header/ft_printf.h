@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 19:43:34 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/25 16:17:38 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/25 17:02:17 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,10 @@ int					ft_print_big_x(t_print *po, va_list ap);
 char				*ft_add_b_x_mod_length(t_print *po, va_list ap,
 						unsigned long long int n);
 int					ft_print_little_x(t_print *po, va_list ap);
-char				*ft_add_l_x_mod_length(t_print *po, va_list ap,
-						unsigned long long int n);
-void				ft_space_string_x_little(char *str, t_print *po, int sizestr);
+char				*ft_add_l_x_mod_length(t_print *po,
+						va_list ap, unsigned long long int n);
+void				ft_space_string_x_little(char *str,
+						t_print *po, int sizestr);
 void				hp_print_0x_little(t_print *po, char *str);
 void				ft_space_string_x_big(char *str, t_print *po, int sizestr);
 void				hp_print_0x_big(t_print *po, char *str);
@@ -90,19 +91,23 @@ void				ft_print_accuracy_x_b(char *str, t_print *po,
 						int sizestr, int saveacc);
 void				ft_print_accuracy_x_l(char *str, t_print *po,
 						int sizestr, int saveacc);
-void				hp2_print_accuracy_dec_x(char *str, t_print *po, int sizestr);
+void				hp2_print_accuracy_dec_x(char *str, t_print *po,
+						int sizestr);
 void				hp_norm_space_x(t_print *po, int sizestr);
 int					ft_print_p(t_print *po, va_list ap);
 int					ft_print_help_p(t_print *po, char *str);
 char				*ft_add_l_p_mod_length(t_print *po, va_list ap,
 						unsigned long long int n);
-int					ft_print_float(t_print *po, va_list ap, int sim, char *drobstr);
+int					ft_print_float(t_print *po, va_list ap,
+						int sim, char *drobstr);
 void				print_space_float(t_print *po, char *celstr, char *drobstr);
 char				*print_drobnoe(int nbr, long double drobnoe, int **sim);
 char				*ft_float_ac_0(long double nbr, int *sim);
 char				*ft_float_ac_big(t_print *po, long double nbr, int *sim);
 void				ft_float_ac_minus(t_print *po, char *celstr);
-void				ft_roun(char **celoe, char **drobnoe, int sim, long long i);
-void				ft_roun_celoe(char **celoe, unsigned long long sizec, long long i);
+void				ft_roun(char **celoe, char **drobnoe, int sim,
+						long long i);
+void				ft_roun_celoe(char **celoe, unsigned long long sizec,
+						long long i);
 
 #endif

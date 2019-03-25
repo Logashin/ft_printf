@@ -999,7 +999,7 @@ printf("%d - %d\n\n", a , b);
 
 int main(void)
 {
-	ft_printf("%s", -1000);
+	// ft_printf("%s", -1000);
 	// int integer = 1223;
 	// float real_num = 0.231;
 	// char c = 'a';
@@ -1012,7 +1012,7 @@ int main(void)
 	// octal_checker();
 	// char_checker();
 
-	// float_checker();
+	float_checker();
 	// ft_printf("%.20f\n", 1.2);
 	// printf("%.20f\n", 1.2);
 	// str_checker();

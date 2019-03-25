@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 13:03:43 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/21 17:38:37 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/25 16:50:43 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,10 @@ int			ft_printf(const char *format, ...)
 {
 	va_list ap;
 	t_print *po;
+	int		size;
 
 	po = NULL;
+	size = 0;
 	po = ft_struct_creat(po);
 	if (format)
 	{
@@ -59,8 +61,9 @@ int			ft_printf(const char *format, ...)
 		ft_parse_format((char*)format, po, ap);
 		va_end(ap);
 	}
+	size = po->returnsize;
 	free(po);
-	return ((int)po->returnsize);
+	return (size);
 }
 
 int			ft_check_valid_param(char *str, int i, t_print *po)
