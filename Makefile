@@ -32,16 +32,17 @@ FO = $(addprefix $(DIRO)/, $(OBJ))
 
 OBJPRINT = $(addprefix $(DIRO)/, $(SRC:.c=.o))
 
-all: $(NAME)
+all: lib $(NAME)
+
+lib:
+	make -C libft
+	make copy -C libft
 
 $(NAME): $(OBJPRINT)
-	@make -C libft
 	ar -rc $(NAME) $(FO)
 	ranlib $(NAME)
 
 $(DIRO)/%.o: $(DIRS)/%.c 
-	@make -C libft
-	@make copy -C libft
 	@gcc $(FLAGS) -I $(HEADER) -o $@ -c $<
 
 clean: 
