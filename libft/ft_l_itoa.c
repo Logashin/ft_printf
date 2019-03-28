@@ -6,7 +6,7 @@
 /*   By: tmann <tmann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 16:55:09 by tmann             #+#    #+#             */
-/*   Updated: 2019/03/17 16:06:14 by tmann            ###   ########.fr       */
+/*   Updated: 2019/03/28 18:12:59 by tmann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char			intinstr(int n)
 
 static char			*numb(long long n, long long size)
 {
-	size_t					i;
+	long long				i;
 	long long				res2;
 	char					*str;
 	int						flag;
@@ -59,7 +59,7 @@ static char			*numb(long long n, long long size)
 		n = -n;
 		flag = 1;
 	}
-	while (size > i)
+	while (i >= 0)
 	{
 		res2 = n % 10;
 		n = n / 10;
